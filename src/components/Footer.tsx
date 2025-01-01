@@ -1,9 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto">
-        <p className="text-center">풋터</p>
-      </div>
+    <footer className="bg-gray-200 dark:bg-gray-500 p-4 text-center">
+      <p className="text-gray-700 dark:text-gray-300">풋터 영역</p>
     </footer>
   )
 }
