@@ -17,8 +17,8 @@ export default function MainLayout({ children }: PropsWithChildren) {
       className={`flex flex-col min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
       <Header />
       <button onClick={toggleTheme} className="p-2 bg-blue-500 text-white rounded">
-        Toggle Theme
-      </button>
+          {theme === 'light' ? 'Dark' : 'Light'} Mode
+        </button>
       <main className="flex-grow bg-white dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
         {children}
       </main>
