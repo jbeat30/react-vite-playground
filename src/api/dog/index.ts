@@ -1,3 +1,6 @@
-import dogInstance from './instance.ts'
+import { AxiosRequestConfig } from 'axios'
 
-export const dogListApi = dogInstance.get('breeds/list/all')
+export const dogListApi: AxiosRequestConfig = {
+  url: 'breeds/list/all',
+  method: 'GET',
+};
