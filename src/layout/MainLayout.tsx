@@ -1,6 +1,6 @@
 import { PropsWithChildren, useContext } from 'react'
-import Header from '../components/Header.tsx'
-import Footer from '../components/Footer.tsx'
+import Header from '../components/layout/Header.tsx'
+import Footer from '../components/layout/Footer.tsx'
 import { ThemeContext } from '../hooks/contexts/theme/ThemeContext.tsx'
 
 export default function MainLayout({ children }: PropsWithChildren) {
