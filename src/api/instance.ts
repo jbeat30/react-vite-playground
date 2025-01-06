@@ -8,7 +8,7 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
  * @description
  */
 const axiosInstance = axios.create({
-  baseURL: 'https://dog.ceo/api/',
+  baseURL: 'https://jsonplaceholder.typicode.com/',
   timeout: 1000, // 요청 타임아웃 설정 (1초)
 });
 

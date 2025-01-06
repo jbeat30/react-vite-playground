@@ -23,10 +23,10 @@ export default function Header() {
           </li>
           <li>
             <NavLink
-              to="/dog"
+              to="/post"
               className={({ isActive }) => (isActive ? 'text-blue-500 font-bold' : 'text-gray-700 dark:text-gray-300')}
             >
-              강아지목록
+              게시글 목록
             </NavLink>
           </li>
         </ul>
