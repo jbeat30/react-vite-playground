@@ -2,6 +2,8 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
 import axiosInstance from '../api/instance.ts'
 
+// TODO: DOMException [AbortError]: 에러 처리
+
 /**
  *
  * @param axiosParams

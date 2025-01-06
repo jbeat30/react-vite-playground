@@ -3,6 +3,8 @@ import MainLayout from '../../layout/MainLayout.tsx'
 import PostList from '../../components/PostList.tsx'
 import { postListApi } from '../../api'
 
+// TODO: 변수가 아닌 객체로 전달 시 에러 발생 (useAxios<PostProps[]>(postListApi))
+
 export default function Post() {
   const { data, loading, error } = useAxios<PostProps[]>(postListApi)
 
