@@ -3,10 +3,10 @@ import { useEffect, useState, useRef } from 'react';
 import axiosInstance from '../api/instance.ts';
 
 export default function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
-  const [response, setResponse] = useState<AxiosResponse<T> | null>(null);
-  const [error, setError] = useState<AxiosError | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const controllerRef = useRef(new AbortController());
+  const [response, setResponse] = useState<AxiosResponse<T> | null>(null); // 응답 데이터 상태 관리
+  const [error, setError] = useState<AxiosError | null>(null); // 에러 상태 관리
+  const [loading, setLoading] = useState<boolean>(true); // 로딩 상태 관리
+  const controllerRef = useRef(new AbortController()); // AbortController 인스턴스 관리
 
   useEffect(() => {
     const controller = controllerRef.current;
