@@ -49,6 +49,15 @@ src
     └── Modal.tsx
     ```
 
+- **context**:  
+  React 컨텍스트 파일이 위치하는 폴더
+    ```markdown
+    context
+    └── theme
+        ├── ThemeContext.tsx
+        └── ThemeProvider.tsx
+    ```
+
 - **features**:  
   특정 기능에 대한 컴포넌트와 로직을 포함하는 폴더
   ```markdown
