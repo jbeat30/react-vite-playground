@@ -2,7 +2,6 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
 import axiosInstance from '../api/instance.ts'
 
-// TODO: DOMException [AbortError]: 에러 처리
 
 /**
  *
@@ -22,7 +21,7 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
   const [loading, setLoading] = useState<boolean>(true) // 로딩 상태 관리
 
   useEffect(() => {
-    const controller = new AbortController() // 새로운 AbortController 인스턴스 생성
+    const controller = new AbortController()
 
     setLoading(true) // 로딩 상태 초기화
 
@@ -43,8 +42,12 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
       })
 
     return () => {
-      controller.abort()
+      // 요청이 완료된 경우에만 요청 취소
+      if(data !== null && loading === false) {
+        controller.abort()
+      }
     }
+
   }, [axiosParams])
 
   return { response, data, loading, error }
