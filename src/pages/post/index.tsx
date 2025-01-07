@@ -8,19 +8,16 @@ export default function Post() {
 
   return (
     <MainLayout>
-      <div className="mx-auto container">
-        <h1 className="text-2xl text-blue-400">Post</h1>
-        {loading ? (
-          <div>로딩 중...</div>
-        ) : error ? (
-          <div>에러 발생: {error.message}</div>
-        ) : (
-          <div>
-            <h2 className="text-xl font-bold">게시글 목록</h2>
-            {data && <PostList data={data} />}
-          </div>
-        )}
-      </div>
+      <h1 className="text-2xl text-blue-400 text-center">Post List</h1>
+      {loading ? (
+        <div>로딩 중...</div>
+      ) : error ? (
+        <div>에러 발생: {error.message}</div>
+      ) : (
+        <div className="-mx-4 my-2 flex flex-wrap">
+          {data && <PostList data={data} />}
+        </div>
+      )}
     </MainLayout>
   )
 }

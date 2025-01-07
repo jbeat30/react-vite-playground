@@ -20,9 +20,11 @@ export default function MainLayout({ children }: PropsWithChildren) {
           {theme === 'light' ? 'Dark' : 'Light'} Mode
         </button>
       <main className="flex-grow bg-white dark:bg-gray-800 p-4 text-gray-700 dark:text-gray-300">
-        {children}
+        <div className="mx-auto container">
+          {children}
+        </div>
       </main>
       <Footer />
     </div>
-  )
+)
 }
