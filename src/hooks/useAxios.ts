@@ -45,7 +45,7 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
 
     return () => {
       // 요청이 완료된 경우에만 요청 취소
-      if (data !== null && loading === false) {
+      if (data !== null && !loading) {
         controller.abort()
       }
     }
