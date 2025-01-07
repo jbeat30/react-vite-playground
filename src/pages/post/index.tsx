@@ -10,7 +10,6 @@ export default function Post() {
     <MainLayout>
       <div className="mx-auto container">
         <h1 className="text-2xl text-blue-400">Post</h1>
-        <p className="text-lg">This is the post page</p>
         {loading ? (
           <div>로딩 중...</div>
         ) : error ? (
