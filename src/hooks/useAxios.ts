@@ -2,7 +2,6 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
 import axiosInstance from '../api/instance.ts'
 
-
 /**
  *
  * @param axiosParams
@@ -17,7 +16,7 @@ import axiosInstance from '../api/instance.ts'
 export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
   const [response, setResponse] = useState<AxiosResponse<T> | null>(null) // 응답 데이터 상태 관리
   const [data, setData] = useState<T | null>(null) // 응답 데이터만을 추출하여 상태 관리
-  const [error, setError] = useState<AxiosError | null>(null) // 에러 상태 관리
+  const [error, setError] = useState<AxiosError | null>(null) // 에러 상These태 관리
   const [loading, setLoading] = useState<boolean>(true) // 로딩 상태 관리
 
   useEffect(() => {
@@ -43,12 +42,11 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
 
     return () => {
       // 요청이 완료된 경우에만 요청 취소
-      if(data !== null && loading === false) {
+      if (data !== null && loading === false) {
         controller.abort()
       }
     }
-
-  }, [axiosParams])
+  }, [axiosParams.method, axiosParams.url])
 
   return { response, data, loading, error }
 }
