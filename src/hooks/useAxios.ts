@@ -22,23 +22,26 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
   useEffect(() => {
     const controller = new AbortController()
 
-    setLoading(true) // 로딩 상태 초기화
+    const fetchData = async () => {
+      setLoading(true) // 로딩 상태 초기화
 
-    axiosInstance({ ...axiosParams, signal: controller.signal })
-      .then((res) => {
+      try {
+        const res = await axiosInstance({ ...axiosParams, signal: controller.signal })
         setResponse(res)
         setData(res.data)
-      })
-      .catch((err) => {
+      } catch (error) {
+        const err = error as AxiosError
         if (err.name === 'CanceledError') {
           console.log('요청이 취소되었습니다:: ', err.message)
         } else {
           setError(err)
         }
-      })
-      .finally(() => {
+      } finally {
         setLoading(false)
-      })
+      }
+    }
+
+    fetchData()
 
     return () => {
       // 요청이 완료된 경우에만 요청 취소
