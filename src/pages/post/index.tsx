@@ -2,6 +2,7 @@ import useAxios from '../../hooks/useAxios.ts'
 import MainLayout from '../../layout/MainLayout.tsx'
 import PostList from '../../components/PostList.tsx'
 import { postListApi } from '../../api'
+import Spinner from '../../components/Spinner.tsx'
 
 export default function Post() {
   const { data, loading, error } = useAxios<PostProps[]>(postListApi)
@@ -9,7 +10,7 @@ export default function Post() {
   return (
     <MainLayout title={'Post List'}>
       {loading ? (
-        <div>로딩 중...</div>
+        <Spinner/>
       ) : error ? (
         <div>에러 발생: {error.message}</div>
       ) : (
