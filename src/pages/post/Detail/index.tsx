@@ -6,12 +6,8 @@ import Spinner from '../../../components/Spinner.tsx'
 
 export default function PostDetail() {
   const { id } = useParams()
-  console.log(id)
   const { data, loading, error } = useAxios<PostProps>(postDetailApi(id!))
 
-  console.log(data)
-  console.log(loading)
-  console.log(error)
   return (
     <MainLayout title={'Post Detail'}>
       {loading ? (
