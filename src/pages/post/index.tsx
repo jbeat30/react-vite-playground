@@ -7,8 +7,7 @@ export default function Post() {
   const { data, loading, error } = useAxios<PostProps[]>(postListApi)
 
   return (
-    <MainLayout>
-      <h1 className="text-2xl text-blue-400 text-center">Post List</h1>
+    <MainLayout title={'Post List'}>
       {loading ? (
         <div>로딩 중...</div>
       ) : error ? (

@@ -12,8 +12,7 @@ export default function PostDetail() {
   console.log(loading)
   console.log(error)
   return (
-    <MainLayout>
-      <h1 className="text-2xl text-blue-400 text-center">Post Detail</h1>
+    <MainLayout title={'Post Detail'}>
       <div className="-mx-4 my-2 flex flex-wrap">
         <div className="w-full px-4">
           <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
