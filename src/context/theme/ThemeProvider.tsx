@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { ThemeContext } from './ThemeContext.tsx';
 
 export default function ThemeProvider({ children }: PropsWithChildren) {
@@ -12,7 +12,7 @@ export default function ThemeProvider({ children }: PropsWithChildren) {
     return 'light'; // 기본 테마 설정
   });
 
-  const toggleTheme = () => {
+  const toggleTheme = ()  => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
   };
