@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
 /**
  * Axios 인스턴스 생성
@@ -7,7 +7,7 @@ import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
  * @module axiosInstance
  * @description
  */
-const axiosInstance = axios.create({
+const axiosInstance:AxiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
   timeout: 1000, // 요청 타임아웃 설정 (1초)
 });
