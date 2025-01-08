@@ -17,3 +17,6 @@
 ## React Children props Type
 
 기본 props 타입에 대한 자세한 내용은 [여기](https://github.com/jbeat30/react-vite-example/blob/main/documents/children-props-types.md)에서 확인할 수 있음
+
+## Axios 사용
+`axios` 라이브러리를 사용해서 API 요청을 하는 방법에 대한 자세한 내용은 [여기](https://github.com/jbeat30/react-vite-example/blob/main/documents/axios-intance.md)에서 확인할 수 있음
