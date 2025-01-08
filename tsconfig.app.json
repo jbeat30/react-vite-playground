@@ -1,26 +1,44 @@
 {
   "compilerOptions": {
+    // tsBuildInfo 파일 경로 설정
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // 컴파일 타겟 ES2020 설정
     "target": "ES2020",
+    // 클래스 필드에 대한 define 사용
     "useDefineForClassFields": true,
+    // 사용할 라이브러리 설정
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // 모듈 시스템 설정
     "module": "ESNext",
+    // 라이브러리 검사 건너뛰기
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    /* 번들러 모드 설정 */
+    // 모듈 해상도 설정
     "moduleResolution": "bundler",
+    // TS 확장자 가져오기 허용
     "allowImportingTsExtensions": true,
+    // 모듈 격리 설정
     "isolatedModules": true,
+    // 모듈 감지 강제 설정
     "moduleDetection": "force",
+    // 출력 파일 생성 안 함
     "noEmit": true,
+    // JSX 설정
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* 린팅 설정 */
+    // 엄격한 타입 검사
     "strict": true,
+    // 사용하지 않는 지역 변수 검사
     "noUnusedLocals": true,
+    // 사용하지 않는 매개변수 검사
     "noUnusedParameters": true,
+    // switch 문에서 누락된 케이스 검사
     "noFallthroughCasesInSwitch": true,
+    // 확인되지 않은 부작용 가져오기 검사
     "noUncheckedSideEffectImports": true
   },
+  // 포함할 파일 설정
   "include": ["src"]
 }
