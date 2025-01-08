@@ -14,7 +14,7 @@ export default function Post() {
       ) : error ? (
         <div>에러 발생: {error.message}</div>
       ) : (
-        <div className="-mx-4 my-2 flex flex-wrap">
+        <div className="my-2 flex flex-wrap">
           {data && <PostList data={data} />}
         </div>
       )}

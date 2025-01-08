@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom'
+import ThemeToggleButton from '../ThemeToggleButton.tsx'
 
 export default function Header() {
   return (
-    <header className="bg-gray-200 dark:bg-gray-800 p-4">
-      <nav className="container mx-auto">
-        <ul className="flex gap-4">
+    <header className="bg-gray-200 dark:bg-slate-700 p-4">
+      <div className="mx-auto container flex justify-between">
+      <nav>
+        <ul className="flex flex-wrap items-center text-base justify-center gap-4">
           <li className="">
             <NavLink
               to="/"
@@ -31,6 +33,8 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <ThemeToggleButton />
+      </div>
     </header>
   )
 }

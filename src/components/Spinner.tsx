@@ -1,6 +1,6 @@
 export default function Spinner({ size = 'xl' }: { size?: 'sm' | 'md' | 'lg' | 'xl' }) {
   return (
-    <section className="bg-white py-20 dark:bg-dark">
+    <section className="bg-white py-20 dark:bg-slate-800">
       <div className="container">
         <div className="flex flex-wrap items-center gap-4">
           {size === 'sm' ? (
