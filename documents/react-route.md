@@ -7,7 +7,8 @@
 먼저, `react-router-dom` 패키지를 설치함
 
 ```bash
-pnpm add react-router-dom @types/react-router-dom -D
+pnpm add react-router-dom
+pnpm add @types/react-router-dom -D
 ```
 
 ## 2. 기본 설명
