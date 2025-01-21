@@ -4,7 +4,7 @@ import instance from '../api/instance.ts'
 
 /**
  *
- * @param axiosParams
+ * @param axiosConfig
  * @returns
  * @description
  * - Axios 요청을 보내고 응답 데이터를 상태로 관리하는 커스텀 훅
