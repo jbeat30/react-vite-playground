@@ -1,6 +1,6 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
-import axiosInstance from '../api/instance.ts'
+import instance from '../api/instance.ts'
 
 /**
  *
@@ -13,9 +13,9 @@ import axiosInstance from '../api/instance.ts'
  * - 요청이 실패하면 에러를 error 상태에 저장
  * - 컴포넌트가 언마운트되면 요청을 취소하고, 새로운 AbortController 인스턴스를 생성
  */
-export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
+export const useAxios = <T>(axiosConfig: AxiosRequestConfig<T>) => {
   const [response, setResponse] = useState<AxiosResponse<T> | null>(null) // 응답 데이터 상태 관리
-  const [data, setData] = useState<T | null>(null) // 응답 데이터만을 추출하여 상태 관리
+  const [data, setData] = useState<T | null>(null); // 응답 데이터만을 추출하여 상태 관리
   const [error, setError] = useState<AxiosError | null>(null) // 에러 상These태 관리
   const [loading, setLoading] = useState<boolean>(true) // 로딩 상태 관리
 
@@ -23,10 +23,9 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
     const controller = new AbortController()
 
     const fetchData = async () => {
-      setLoading(true) // 로딩 상태 초기화
-
       try {
-        const res = await axiosInstance({ ...axiosParams, signal: controller.signal })
+        setLoading(true) // 로딩 상태 초기화
+        const res = await instance({ ...axiosConfig, signal: controller.signal })
         setResponse(res)
         setData(res.data)
       } catch (error) {
@@ -49,7 +48,7 @@ export function useAxios<T>(axiosParams: AxiosRequestConfig<T>) {
         controller.abort()
       }
     }
-  }, [axiosParams.method, axiosParams.url])
+  }, [axiosConfig.method, axiosConfig.url])
 
   return { response, data, loading, error }
 }

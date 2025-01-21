@@ -4,10 +4,10 @@ import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 
  * Axios 인스턴스 생성
  * - 기본 URL, 타임아웃 등의 설정을 재사용할 수 있는 Axios 인스턴스
  * - 요청과 응답에 대한 인터셉터를 설정하여 로깅 및 에러 처리를 통일화 가능
- * @module axiosInstance
+ * @module instance
  * @description
  */
-const axiosInstance:AxiosInstance = axios.create({
+const instance:AxiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
   timeout: 1000, // 요청 타임아웃 설정 (1초)
 });
@@ -18,7 +18,7 @@ const axiosInstance:AxiosInstance = axios.create({
  * @returns {InternalAxiosRequestConfig} - 수정된 요청 설정
  * @throws {Promise} - 요청 오류 발생 시
  */
-axiosInstance.interceptors.request.use(
+instance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     console.log('전송된 요청:', config.method, config.url) // 요청 메서드와 URL 출력
     return config; // 요청 설정을 그대로 반환
@@ -35,7 +35,7 @@ axiosInstance.interceptors.request.use(
  * @returns {AxiosResponse} - 수정된 응답 데이터
  * @throws {Promise} - 응답 오류 발생 시
  */
-axiosInstance.interceptors.response.use(
+instance.interceptors.response.use(
   (response: AxiosResponse) => {
     console.log('수신된 응답:', response.status, response.statusText) // 응답 상태와 상태 텍스트 출력
     return response; // 응답 데이터를 그대로 반환
@@ -46,4 +46,4 @@ axiosInstance.interceptors.response.use(
   }
 )
 
-export default axiosInstance;
+export default instance;
