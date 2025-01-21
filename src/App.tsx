@@ -1,39 +1,16 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/home'
-import Blog from './pages/blog'
-import NotFound from './pages/NotFound.tsx'
-import Post from './pages/post'
-import PostDetail from './pages/post/Detail'
-
-
-const routes = [
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/blog',
-    element: <Blog />,
-  },
-  {
-    path: '/post',
-    element: <Post />,
-  },
-  {
-    path: '/post/:id',
-    element: <PostDetail />,
-  },
-  {
-    path: '*',
-    element: <NotFound />,
-  }
-]
+import { routes } from './utils/route.tsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const router = createBrowserRouter(routes);
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   )
 }
 
