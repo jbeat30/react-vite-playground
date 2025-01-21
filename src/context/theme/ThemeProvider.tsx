@@ -1,16 +1,9 @@
 import { PropsWithChildren, useEffect, useState } from 'react'
 import { ThemeContext } from './ThemeContext.tsx';
+import { initialTheme } from '../../utils/default.ts'
 
 export default function ThemeProvider({ children }: PropsWithChildren) {
-  const [theme, setTheme] = useState<string>(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.documentElement.className = savedTheme;
-      return savedTheme;
-    }
-    return 'light'; // 기본 테마 설정
-  });
+  const [theme, setTheme] = useState<string>(initialTheme());
 
   const toggleTheme = ()  => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
